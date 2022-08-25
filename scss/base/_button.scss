@@ -1,0 +1,37 @@
+button{
+    background: #e8e8e8;
+    font: $font-b-16;
+    padding: 8px 16px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    &:hover{
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em;
+    }
+    &:active{
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em;
+    }
+}
+
+.pro-skill button {
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    &:hover{
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em;
+    }
+    &:active{
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em;
+    }
+}
+
+.btn-delete{
+        width: 40px;
+        height: 40px;
+        background: url('https://api.iconify.design/ic/round-delete-outline.svg') no-repeat center center / 24px;
+        background-color: hsl(43, 55%, 74%);
+}

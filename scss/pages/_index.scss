@@ -1,0 +1,77 @@
+.pro-skill{
+    display: flex;
+    font: $font-t-16;
+    ul > li:not(:last-child){
+        margin-bottom: 8px;
+    }
+    a{
+        width: 80px;
+        padding: 8px 16px;
+        text-align: center;
+        &:hover{
+            font-weight: 600;
+            background: #B8B8B8;
+        }
+    }
+    &-class{
+        margin-right: 16px;
+        height: fit-content;
+    }
+    .product-list button{
+        width: 180px;
+    }
+    .product-list:not(#product-tool){
+        display: none;
+    }
+    .product-list{
+        max-height: 27.5em;
+        min-height: fit-content;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.product-todo{
+    margin-left: 40px;
+    width: 320px;
+
+    background-color: goldenrod;
+
+    border: 3px black solid;
+    box-shadow: 0.3em 0.3em;
+
+    padding: 16px 32px 40px 32px;
+    text-align: center;
+    h2{
+        font: $font-d-20;
+        margin-bottom: 24px;
+    }
+    ul > li:not(:last-child){
+        margin-bottom: 16px;
+    }
+    .hint{
+        position: relative;
+        top: calc(50% - 16px - 25px);
+
+        color: #00000095;
+    }
+    .todo-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        font: $font-b-16;
+        p{
+            width: 200px;
+            padding: 8px 16px;
+            border-bottom: 2px solid rgb(56, 56, 56);
+        }
+    }
+}
+
+
+// #product-processing{
+//     display: none;
+// }

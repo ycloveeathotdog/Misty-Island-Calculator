@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #e8e8e8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.display-none {
+  display: none;
+}
+
+.t-center {
+  text-align: center;
+}
+
+button {
+  background: #e8e8e8;
+  font: 500 16px/1.5 "Noto Sans TC", sans-serif;
+  padding: 8px 16px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  -webkit-box-shadow: 0.1em 0.1em;
+          box-shadow: 0.1em 0.1em;
+}
+button:hover {
+  -webkit-transform: translate(-0.05em, -0.05em);
+          transform: translate(-0.05em, -0.05em);
+  -webkit-box-shadow: 0.15em 0.15em;
+          box-shadow: 0.15em 0.15em;
+}
+button:active {
+  -webkit-transform: translate(0.05em, 0.05em);
+          transform: translate(0.05em, 0.05em);
+  -webkit-box-shadow: 0.05em 0.05em;
+          box-shadow: 0.05em 0.05em;
+}
+
+.pro-skill button {
+  border: 3px solid black;
+  border-radius: 0.4em;
+  -webkit-box-shadow: 0.1em 0.1em;
+          box-shadow: 0.1em 0.1em;
+}
+.pro-skill button:hover {
+  -webkit-transform: translate(-0.05em, -0.05em);
+          transform: translate(-0.05em, -0.05em);
+  -webkit-box-shadow: 0.15em 0.15em;
+          box-shadow: 0.15em 0.15em;
+}
+.pro-skill button:active {
+  -webkit-transform: translate(0.05em, 0.05em);
+          transform: translate(0.05em, 0.05em);
+  -webkit-box-shadow: 0.05em 0.05em;
+          box-shadow: 0.05em 0.05em;
+}
+
+.btn-delete {
+  width: 40px;
+  height: 40px;
+  background: url("https://api.iconify.design/ic/round-delete-outline.svg") no-repeat center center/24px;
+  background-color: hsl(43deg, 55%, 74%);
+}
+
+.pro-skill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: 400 16px/19px "Noto Sans TC", sans-serif;
+}
+.pro-skill ul > li:not(:last-child) {
+  margin-bottom: 8px;
+}
+.pro-skill a {
+  width: 80px;
+  padding: 8px 16px;
+  text-align: center;
+}
+.pro-skill a:hover {
+  font-weight: 600;
+  background: #B8B8B8;
+}
+.pro-skill-class {
+  margin-right: 16px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.pro-skill .product-list button {
+  width: 180px;
+}
+.pro-skill .product-list:not(#product-tool) {
+  display: none;
+}
+.pro-skill .product-list {
+  max-height: 27.5em;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  overflow-y: scroll;
+}
+.pro-skill .product-list::-webkit-scrollbar {
+  display: none;
+}
+
+.product-todo {
+  margin-left: 40px;
+  width: 320px;
+  background-color: goldenrod;
+  border: 3px black solid;
+  -webkit-box-shadow: 0.3em 0.3em;
+          box-shadow: 0.3em 0.3em;
+  padding: 16px 32px 40px 32px;
+  text-align: center;
+}
+.product-todo h2 {
+  font: 500 20px/1.25 "Noto Sans TC", sans-serif;
+  margin-bottom: 24px;
+}
+.product-todo ul > li:not(:last-child) {
+  margin-bottom: 16px;
+}
+.product-todo .hint {
+  position: relative;
+  top: calc(50% - 16px - 25px);
+  color: rgba(0, 0, 0, 0.5843137255);
+}
+.product-todo .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  font: 500 16px/1.5 "Noto Sans TC", sans-serif;
+}
+.product-todo .todo-item p {
+  width: 200px;
+  padding: 8px 16px;
+  border-bottom: 2px solid rgb(56, 56, 56);
+}
