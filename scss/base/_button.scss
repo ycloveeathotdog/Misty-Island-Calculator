@@ -35,3 +35,7 @@ button{
         background: url('https://api.iconify.design/ic/round-delete-outline.svg') no-repeat center center / 24px;
         background-color: hsl(43, 55%, 74%);
 }
+
+.todo-btn-list .focused{
+    background-color: goldenrod;
+}

@@ -32,44 +32,66 @@
         }
     }
 }
-
-.product-todo{
+.todo-list-container{
     margin-left: 40px;
-    width: 320px;
-
-    background-color: goldenrod;
-
-    border: 3px black solid;
-    box-shadow: 0.3em 0.3em;
-
-    padding: 16px 32px 40px 32px;
-    text-align: center;
-    h2{
-        font: $font-d-20;
-        margin-bottom: 24px;
-    }
-    ul > li:not(:last-child){
+    height: 27.5em;
+    .todo-btn-list{
+        display: flex;
+        li{
+            margin-right: 8px;
+        }
         margin-bottom: 16px;
     }
-    .hint{
-        position: relative;
-        top: calc(50% - 16px - 25px);
-
-        color: #00000095;
-    }
-    .todo-item{
+    .todo-list-main{
+        // background-color: aqua;
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
-        font: $font-b-16;
-        p{
-            width: 200px;
-            padding: 8px 16px;
-            border-bottom: 2px solid rgb(56, 56, 56);
+        height: calc(100% - 16px - 46px) ;
+    }
+    .product-todo{
+        width: 320px;
+        margin-right: 24px;
+        background-color: hsl(0, 0%, 76%);
+        border: 3px black solid;
+        padding: 16px 32px 40px 32px;
+        text-align: center;
+
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        h2{
+            font: $font-d-20;
+            margin-bottom: 24px;
+        }
+        ul > li:not(:last-child){
+            margin-bottom: 16px;
+        }
+        .hint{
+            position: relative;
+            top: calc(50% - 16px - 25px);
+            color: #00000095;
+        }
+        .todo-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            font: $font-b-16;
+            p{
+                width: 200px;
+                padding: 8px 16px;
+                border-bottom: 2px solid rgb(56, 56, 56);
+            }
         }
     }
+    .focused{
+        background-color: goldenrod;
+        box-shadow: 0.3em 0.3em;
+    }
 }
+
+
+
 
 
 // #product-processing{

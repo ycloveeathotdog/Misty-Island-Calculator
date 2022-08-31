@@ -136,6 +136,10 @@ button:active {
   background-color: hsl(43deg, 55%, 74%);
 }
 
+.todo-btn-list .focused {
+  background-color: goldenrod;
+}
+
 .pro-skill {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,29 +181,50 @@ button:active {
   display: none;
 }
 
-.product-todo {
+.todo-list-container {
   margin-left: 40px;
+  height: 27.5em;
+}
+.todo-list-container .todo-btn-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
+}
+.todo-list-container .todo-btn-list li {
+  margin-right: 8px;
+}
+.todo-list-container .todo-list-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 16px - 46px);
+}
+.todo-list-container .product-todo {
   width: 320px;
-  background-color: goldenrod;
+  margin-right: 24px;
+  background-color: hsl(0deg, 0%, 76%);
   border: 3px black solid;
-  -webkit-box-shadow: 0.3em 0.3em;
-          box-shadow: 0.3em 0.3em;
   padding: 16px 32px 40px 32px;
   text-align: center;
+  overflow-y: scroll;
 }
-.product-todo h2 {
+.todo-list-container .product-todo::-webkit-scrollbar {
+  display: none;
+}
+.todo-list-container .product-todo h2 {
   font: 500 20px/1.25 "Noto Sans TC", sans-serif;
   margin-bottom: 24px;
 }
-.product-todo ul > li:not(:last-child) {
+.todo-list-container .product-todo ul > li:not(:last-child) {
   margin-bottom: 16px;
 }
-.product-todo .hint {
+.todo-list-container .product-todo .hint {
   position: relative;
   top: calc(50% - 16px - 25px);
   color: rgba(0, 0, 0, 0.5843137255);
 }
-.product-todo .todo-item {
+.todo-list-container .product-todo .todo-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,8 +237,13 @@ button:active {
   width: 100%;
   font: 500 16px/1.5 "Noto Sans TC", sans-serif;
 }
-.product-todo .todo-item p {
+.todo-list-container .product-todo .todo-item p {
   width: 200px;
   padding: 8px 16px;
   border-bottom: 2px solid rgb(56, 56, 56);
+}
+.todo-list-container .focused {
+  background-color: goldenrod;
+  -webkit-box-shadow: 0.3em 0.3em;
+          box-shadow: 0.3em 0.3em;
 }
