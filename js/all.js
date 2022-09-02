@@ -10,6 +10,8 @@ proSkillClass.addEventListener('click', function(e) {
     if(e.target.id){    //id不是空字串就進if
         readyToClearId = targetClassId;
         targetClassId = e.target.id;
+        document.querySelector(`#${readyToClearId}`).classList.remove('focused');
+        e.target.classList.add('focused');
 
         if(readyToClearId != targetClassId){
             //組成DOM看得懂的東西(?)
@@ -46,22 +48,21 @@ for(let i=0;i<todoBtn.length;i++){
 }
 ///////////// 點擊物品後新增至右側 /////////////
 let productListContainer = document.querySelector('.product-list-container'); //限制判斷點擊範圍
-//todoListIDCurrent > ul.todo-list
-// let todoList = document.querySelector('.product-todo > ul.todo-list'); //要放使用者點擊物品的地方
-//li本體
-{/* <li class="todo-item">
-    <p>test</p>
-    <button class="btn-delete"></button>
-</li> */}
+{/* <li class="todo-item" data-todo-list-number=$1>
+        <p data-todo-list-number=$1>test</p>
+        <button class="btn-delete" data-todo-list-number=$1></button>
+    </li> */}
 productListContainer.addEventListener('click', function(e) {
+    let targetItemId = e.target.dataset.itemId;
     let todoList = document.querySelector(`${todoListIDCurrent} > ul.todo-list`);
-    if(e.target.id && !isNaN(e.target.id)){    //id不是空字串就進if
+    if(targetItemId){ 
         const todoItem = document.createElement('li');
         todoItem.classList.add('todo-item');
+        todoItem.setAttribute('data-todo-list-number',todoListIDCurrent.slice(1));
         todoItem.innerHTML = 
         `
-            <p>${e.target.innerText}</p>
-            <button class="btn-delete"></button>
+            <p data-todo-list-number="${todoListIDCurrent.slice(1)}">${e.target.innerText}</p>
+            <button class="btn-delete" data-todo-list-number="${todoListIDCurrent.slice(1)}"></button>
         `;
         todoList.appendChild(todoItem);
         let productTodoHint = document.querySelector(`${todoListIDCurrent} > .hint`);
@@ -79,7 +80,6 @@ productListContainer.addEventListener('click', function(e) {
         })
     }
 })
-
 
 
 

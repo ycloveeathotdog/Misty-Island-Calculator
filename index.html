@@ -7,239 +7,234 @@
     <title>迷霧島計算機</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/main.css">
-    <style>
-        /* *{
-            outline: 1px lightslategray solid;
-        } */
-    </style>
 </head>
 <body>
-    <main class="container">
-        <div class="pro-skill">
+    <div class="main-wrapper">
+        <nav class="pro-skill">
             <ul class="pro-skill-class">
-                <li class="pro-skill-class-item"><a href="#" id="tool">工具</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="weapon">武器</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="armor">防具</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="building">建築物</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="defense">防禦</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="processing">加工</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="medicine">藥水</a></li>
-                <li class="pro-skill-class-item"><a href="#" id="mount">坐騎</a></li>
+                <li class="pro-skill-class-item focused" id="tool">工具</li>
+                <li class="pro-skill-class-item" id="weapon">武器</li>
+                <li class="pro-skill-class-item" id="armor">防具</li>
+                <li class="pro-skill-class-item" id="building">建築物</li>
+                <li class="pro-skill-class-item" id="defense">防禦</li>
+                <li class="pro-skill-class-item" id="processing">加工</li>
+                <li class="pro-skill-class-item" id="medicine">藥水</li>
+                <li class="pro-skill-class-item" id="mount">坐騎</li>
             </ul>
             <div class="product-list-container">
                 <ul class="product-list" id="product-tool">
-                    <li class="tool-list-item"><button id="2690010">石斧頭</button></li>
-                    <li class="tool-list-item"><button id="2690044">鋼鐵斧</button></li>
-                    <li class="tool-list-item"><button id="2690011">黃金斧頭</button></li>
-                    <li class="tool-list-item"><button id="2690012">電鋸</button></li>
-                    <li class="tool-list-item"><button id="2690013">石鎬子</button></li>
-                    <li class="tool-list-item"><button id="2690045">鋼鐵十字鎬</button></li>
-                    <li class="tool-list-item"><button id="2690014">黃金稿子</button></li>
-                    <li class="tool-list-item"><button id="2690015">電鑽</button></li>
-                    <li class="tool-list-item"><button id="2690016">火柴</button></li>
-                    <li class="tool-list-item"><button id="2690017">火炬</button></li>
-                    <li class="tool-list-item"><button id="2690039">拆除用槌子</button></li>
-                    <li class="tool-list-item"><button id="2691061">葉子背包</button></li>
-                    <li class="tool-list-item"><button id="2691062">皮革背包</button></li>
-                    <li class="tool-list-item"><button id="2691063">魔法背包</button></li>
-                    <li class="tool-list-item"><button id="2691066">砥石</button></li>
-                    <li class="tool-list-item"><button id="2691080">鞭炮</button></li>
-                    <li class="tool-list-item"><button id="2693034">桶子</button></li>
-                    <li class="tool-list-item"><button id="2691093">探險日誌日記本</button></li>
-                    <li class="tool-list-item"><button id="2691095">模模糊糊料理書</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690010">石斧頭</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690044">鋼鐵斧</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690011">黃金斧頭</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690012">電鋸</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690013">石鎬子</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690045">鋼鐵十字鎬</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690014">黃金稿子</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690015">電鑽</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690016">火柴</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690017">火炬</button></li>
+                    <li class="tool-list-item"><button data-item-id="2690039">拆除用槌子</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691061">葉子背包</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691062">皮革背包</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691063">魔法背包</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691066">砥石</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691080">鞭炮</button></li>
+                    <li class="tool-list-item"><button data-item-id="2693034">桶子</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691093">探險日誌日記本</button></li>
+                    <li class="tool-list-item"><button data-item-id="2691095">模模糊糊料理書</button></li>
                 </ul>
                 <ul class="product-list" id="product-weapon">
-                    <li class="weapon-list-item"><button id="2690000">木劍</button></li>
-                    <li class="weapon-list-item"><button id="2690046">彈弓</button></li>
-                    <li class="weapon-l¬ist-item"><button id="2690047">石錘</button></li>
-                    <li class="weapon-list-item"><button id="2690048">鐵劍</button></li>
-                    <li class="weapon-list-item"><button id="2690001">三叉矛</button></li>
-                    <li class="weapon-list-item"><button id="2690049">戰鬥錘</button></li>
-                    <li class="weapon-list-item"><button id="2690043">霸王劍 MARK-L1</button></li>
-                    <li class="weapon-list-item"><button id="2690050">弓</button></li>
-                    <li class="weapon-list-item"><button id="2690002">黃金劍</button></li>
-                    <li class="weapon-list-item"><button id="2690003">魚叉</button></li>
-                    <li class="weapon-list-item"><button id="2690051">弩弓</button></li>
-                    <li class="weapon-list-item"><button id="2690052">黃金裝飾錘</button></li>
-                    <li class="weapon-list-item"><button id="2690053">混種劍</button></li>
-                    <li class="weapon-list-item"><button id="2690054">粗糙的重砲</button></li>
-                    <li class="weapon-list-item"><button id="2690004">手槍</button></li>
-                    <li class="weapon-list-item"><button id="2690005">步槍</button></li>
-                    <li class="weapon-list-item"><button id="2690055">雙弩槍</button></li>
-                    <li class="weapon-list-item"><button id="2690056">加農砲</button></li>
-                    <li class="weapon-list-item"><button id="2690072">守護者旗幟</button></li>
-                    <li class="weapon-list-item"><button id="2690073">守護者大劍</button></li>
-                    <li class="weapon-list-item"><button id="2690006">猛毒葫蘆瓶</button></li>
-                    <li class="weapon-list-item"><button id="2690007">火焰刀</button></li>
-                    <li class="weapon-list-item"><button id="2690008">水之手杖</button></li>
-                    <li class="weapon-list-item"><button id="2690009">閃電手杖</button></li>
-                    <li class="weapon-list-item"><button id="2690077">鍋蓋</button></li>
-                    <li class="weapon-list-item"><button id="2690078">工地手套</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690000">木劍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690046">彈弓</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690047">石錘</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690048">鐵劍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690001">三叉矛</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690049">戰鬥錘</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690043">霸王劍 MARK-L1</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690050">弓</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690002">黃金劍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690003">魚叉</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690051">弩弓</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690052">黃金裝飾錘</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690053">混種劍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690054">粗糙的重砲</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690004">手槍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690005">步槍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690055">雙弩槍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690056">加農砲</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690072">守護者旗幟</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690073">守護者大劍</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690006">猛毒葫蘆瓶</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690007">火焰刀</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690008">水之手杖</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690009">閃電手杖</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690077">鍋蓋</button></li>
+                    <li class="weapon-list-item"><button data-item-id="2690078">工地手套</button></li>
                 </ul>
                 <ul class="product-list" id="product-armor">
-                    <li class="armor-list-item"><button id="2690019">葉片洋裝</button></li>
-                    <li class="armor-list-item"><button id="2690069">牢固的草鞋</button></li>
-                    <li class="armor-list-item"><button id="2690057">皮衣</button></li>
-                    <li class="armor-list-item"><button id="2690024">雨衣</button></li>
-                    <li class="armor-list-item"><button id="2690021">神鬼戰士盔甲</button></li>
-                    <li class="armor-list-item"><button id="2690020">粗糙的勘查服</button></li>
-                    <li class="armor-list-item"><button id="2690058">鈑金盔甲</button></li>
-                    <li class="armor-list-item"><button id="2690022">黃金盔甲</button></li>
-                    <li class="armor-list-item"><button id="2690023">虎皮大衣</button></li>
-                    <li class="armor-list-item"><button id="2690059">遺物探險服</button></li>
-                    <li class="armor-list-item"><button id="2690060">機能性活動服</button></li>
-                    <li class="armor-list-item"><button id="2690061">重甲戰鬥服</button></li>
-                    <li class="armor-list-item"><button id="2690062">蘊含魔力的長袍</button></li>
-                    <li class="armor-list-item"><button id="2690074">守護的盔甲</button></li>
-                    <li class="armor-list-item"><button id="2690025">叢林花冠</button></li>
-                    <li class="armor-list-item"><button id="2690063">皮革帽</button></li>
-                    <li class="armor-list-item"><button id="2690026">粗糙的勘查帽子</button></li>
-                    <li class="armor-list-item"><button id="2690064">鐵製頭盔</button></li>
-                    <li class="armor-list-item"><button id="2690027">有角的鐵帽子</button></li>
-                    <li class="armor-list-item"><button id="2690029">鳥窩帽子</button></li>
-                    <li class="armor-list-item"><button id="2690065">黃金頭盔</button></li>
-                    <li class="armor-list-item"><button id="2690066">鋼鐵頭盔</button></li>
-                    <li class="armor-list-item"><button id="2690067">遮陽帽</button></li>
-                    <li class="armor-list-item"><button id="2690028">避雷針帽子</button></li>
-                    <li class="armor-list-item"><button id="2690031">蜥蜴人族長帽子</button></li>
-                    <li class="armor-list-item"><button id="2690068">堅固的戰鬥頭盔</button></li>
-                    <li class="armor-list-item"><button id="2690030">燈籠帽子</button></li>
-                    <li class="armor-list-item"><button id="2690075">守護的頭盔</button></li>
-                    <li class="armor-list-item"><button id="2690033">繩製涼鞋</button></li>
-                    <li class="armor-list-item"><button id="2690034">粗糙的皮製鞋</button></li>
-                    <li class="armor-list-item"><button id="2690070">鑲有鉚釘的鞋子</button></li>
-                    <li class="armor-list-item"><button id="2690071">鑲上鐵板的鞋</button></li>
-                    <li class="armor-list-item"><button id="2690035">黃金鞋子</button></li>
-                    <li class="armor-list-item"><button id="2690076">守護的鞋子</button></li>
-                    <li class="armor-list-item"><button id="2690036">羽毛鞋子</button></li>
-                    <li class="armor-list-item"><button id="2690037">腳掌鞋子</button></li>
-                    <li class="armor-list-item"><button id="2690038">格擋鞋子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690019">葉片洋裝</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690069">牢固的草鞋</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690057">皮衣</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690024">雨衣</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690021">神鬼戰士盔甲</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690020">粗糙的勘查服</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690058">鈑金盔甲</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690022">黃金盔甲</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690023">虎皮大衣</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690059">遺物探險服</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690060">機能性活動服</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690061">重甲戰鬥服</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690062">蘊含魔力的長袍</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690074">守護的盔甲</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690025">叢林花冠</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690063">皮革帽</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690026">粗糙的勘查帽子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690064">鐵製頭盔</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690027">有角的鐵帽子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690029">鳥窩帽子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690065">黃金頭盔</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690066">鋼鐵頭盔</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690067">遮陽帽</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690028">避雷針帽子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690031">蜥蜴人族長帽子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690068">堅固的戰鬥頭盔</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690030">燈籠帽子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690075">守護的頭盔</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690033">繩製涼鞋</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690034">粗糙的皮製鞋</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690070">鑲有鉚釘的鞋子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690071">鑲上鐵板的鞋</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690035">黃金鞋子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690076">守護的鞋子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690036">羽毛鞋子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690037">腳掌鞋子</button></li>
+                    <li class="armor-list-item"><button data-item-id="2690038">格擋鞋子</button></li>
                 </ul>
                 <ul class="product-list" id="product-building">
-                    <li class="building-list-item"><button id="2692000">生存工作台</button></li>
-                    <li class="building-list-item"><button id="2692001">工業工作台</button></li>
-                    <li class="building-list-item"><button id="2692002">工學工作台</button></li>
-                    <li class="building-list-item"><button id="2692051">魔力分析裝置</button></li>
-                    <li class="building-list-item"><button id="2692003">煉金爐</button></li>
-                    <li class="building-list-item"><button id="2692004">魔法賦予台</button></li>
-                    <li class="building-list-item"><button id="2692005">營火</button></li>
-                    <li class="building-list-item"><button id="2692046">烹調用營火</button></li>
-                    <li class="building-list-item"><button id="2692007">調理台</button></li>
-                    <li class="building-list-item"><button id="2692008">路燈</button></li>
-                    <li class="building-list-item"><button id="2692009">木箱</button></li>
-                    <li class="building-list-item"><button id="2692050">結實的箱子</button></li>
-                    <li class="building-list-item"><button id="2692011">椰子帳篷</button></li>
-                    <li class="building-list-item"><button id="2692012">羽毛帳篷</button></li>
-                    <li class="building-list-item"><button id="2692047">動物皮革帳篷</button></li>
-                    <li class="building-list-item"><button id="2692048">雨水過濾器</button></li>
-                    <li class="building-list-item"><button id="2692049">井</button></li>
-                    <li class="building-list-item"><button id="2692023">自動釣魚竿</button></li>
-                    <li class="building-list-item"><button id="2692024">聖杯</button></li>
-                    <li class="building-list-item"><button id="2692025">氣象調節器</button></li>
-                    <li class="building-list-item"><button id="2692016">黏性踏板</button></li>
-                    <li class="building-list-item"><button id="2692017">怪物聲音喇叭</button></li>
-                    <li class="building-list-item"><button id="2692018">臼齒陷阱</button></li>
+                    <li class="building-list-item"><button data-item-id="2692000">生存工作台</button></li>
+                    <li class="building-list-item"><button data-item-id="2692001">工業工作台</button></li>
+                    <li class="building-list-item"><button data-item-id="2692002">工學工作台</button></li>
+                    <li class="building-list-item"><button data-item-id="2692051">魔力分析裝置</button></li>
+                    <li class="building-list-item"><button data-item-id="2692003">煉金爐</button></li>
+                    <li class="building-list-item"><button data-item-id="2692004">魔法賦予台</button></li>
+                    <li class="building-list-item"><button data-item-id="2692005">營火</button></li>
+                    <li class="building-list-item"><button data-item-id="2692046">烹調用營火</button></li>
+                    <li class="building-list-item"><button data-item-id="2692007">調理台</button></li>
+                    <li class="building-list-item"><button data-item-id="2692008">路燈</button></li>
+                    <li class="building-list-item"><button data-item-id="2692009">木箱</button></li>
+                    <li class="building-list-item"><button data-item-id="2692050">結實的箱子</button></li>
+                    <li class="building-list-item"><button data-item-id="2692011">椰子帳篷</button></li>
+                    <li class="building-list-item"><button data-item-id="2692012">羽毛帳篷</button></li>
+                    <li class="building-list-item"><button data-item-id="2692047">動物皮革帳篷</button></li>
+                    <li class="building-list-item"><button data-item-id="2692048">雨水過濾器</button></li>
+                    <li class="building-list-item"><button data-item-id="2692049">井</button></li>
+                    <li class="building-list-item"><button data-item-id="2692023">自動釣魚竿</button></li>
+                    <li class="building-list-item"><button data-item-id="2692024">聖杯</button></li>
+                    <li class="building-list-item"><button data-item-id="2692025">氣象調節器</button></li>
+                    <li class="building-list-item"><button data-item-id="2692016">黏性踏板</button></li>
+                    <li class="building-list-item"><button data-item-id="2692017">怪物聲音喇叭</button></li>
+                    <li class="building-list-item"><button data-item-id="2692018">臼齒陷阱</button></li>
                 </ul>
                 <ul class="product-list" id="product-defense">
-                    <li class="defense-list-item"><button id="2692028">木製柵欄</button></li>
-                    <li class="defense-list-item"><button id="2692029">木製圍籬</button></li>
-                    <li class="defense-list-item"><button id="2692030">石製圍籬</button></li>
-                    <li class="defense-list-item"><button id="2692031">石牆</button></li>
-                    <li class="defense-list-item"><button id="2692032">強化的牆</button></li>
-                    <li class="defense-list-item"><button id="2692033">鋼刺牆</button></li>
-                    <li class="defense-list-item"><button id="2692034">熔岩牆</button></li>
-                    <li class="defense-list-item"><button id="2692035">噴出岩牆</button></li>
-                    <li class="defense-list-item"><button id="2692036">十字弩塔</button></li>
-                    <li class="defense-list-item"><button id="2692040">強化的十字弩塔</button></li>
-                    <li class="defense-list-item"><button id="2692038">迫擊砲塔</button></li>
-                    <li class="defense-list-item"><button id="2692037">加農砲塔</button></li>
-                    <li class="defense-list-item"><button id="2692039">升級的加農砲塔</button></li>
-                    <li class="defense-list-item"><button id="2692041">火球塔</button></li>
-                    <li class="defense-list-item"><button id="2692042">閃電塔</button></li>
-                    <li class="defense-list-item"><button id="2692043">冰凍塔</button></li>
-                    <li class="defense-list-item"><button id="2692044">熔岩塔</button></li>
-                    <li class="defense-list-item"><button id="2692045">魔法子彈塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692028">木製柵欄</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692029">木製圍籬</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692030">石製圍籬</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692031">石牆</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692032">強化的牆</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692033">鋼刺牆</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692034">熔岩牆</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692035">噴出岩牆</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692036">十字弩塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692040">強化的十字弩塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692038">迫擊砲塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692037">加農砲塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692039">升級的加農砲塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692041">火球塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692042">閃電塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692043">冰凍塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692044">熔岩塔</button></li>
+                    <li class="defense-list-item"><button data-item-id="2692045">魔法子彈塔</button></li>
                 </ul>
                 <ul class="product-list" id="product-processing">
-                    <li class="processing-list-item"><button id="2693017">繩子</button></li>
-                    <li class="processing-list-item"><button id="2693018">木板</button></li>
-                    <li class="processing-list-item"><button id="2693019">炭</button></li>
-                    <li class="processing-list-item"><button id="2693020">磚塊</button></li>
-                    <li class="processing-list-item"><button id="2693021">鐵板</button></li>
-                    <li class="processing-list-item"><button id="2693022">鐵棍</button></li>
-                    <li class="processing-list-item"><button id="2693024">水泥粉末</button></li>
-                    <li class="processing-list-item"><button id="2693057">加工合成木</button></li>
-                    <li class="processing-list-item"><button id="2693025">螺絲</button></li>
-                    <li class="processing-list-item"><button id="2693026">齒輪</button></li>
-                    <li class="processing-list-item"><button id="2693027">控制桿</button></li>
-                    <li class="processing-list-item"><button id="2693023">金塊</button></li>
-                    <li class="processing-list-item"><button id="2693015">噴出岩粉末</button></li>
-                    <li class="processing-list-item"><button id="2693028">螺旋槳</button></li>
-                    <li class="processing-list-item"><button id="2693029">引擎</button></li>
-                    <li class="processing-list-item"><button id="2693030">火藥</button></li>
-                    <li class="processing-list-item"><button id="2693031">紅花粉末</button></li>
-                    <li class="processing-list-item"><button id="2693032">香蕉粉末</button></li>
-                    <li class="processing-list-item"><button id="2693033">藥草粉末</button></li>
-                    <li class="processing-list-item"><button id="2693038">水之寶石</button></li>
-                    <li class="processing-list-item"><button id="2693039">閃電寶石</button></li>
-                    <li class="processing-list-item"><button id="2693040">噴出岩溶液</button></li>
-                    <li class="processing-list-item"><button id="2693041">再生溶液</button></li>
-                    <li class="processing-list-item"><button id="2693056">精練的噴出岩結晶</button></li>
-                    <li class="processing-list-item"><button id="2693005">噴出岩</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693017">繩子</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693018">木板</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693019">炭</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693020">磚塊</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693021">鐵板</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693022">鐵棍</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693024">水泥粉末</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693057">加工合成木</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693025">螺絲</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693026">齒輪</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693027">控制桿</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693023">金塊</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693015">噴出岩粉末</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693028">螺旋槳</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693029">引擎</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693030">火藥</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693031">紅花粉末</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693032">香蕉粉末</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693033">藥草粉末</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693038">水之寶石</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693039">閃電寶石</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693040">噴出岩溶液</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693041">再生溶液</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693056">精練的噴出岩結晶</button></li>
+                    <li class="processing-list-item"><button data-item-id="2693005">噴出岩</button></li>
                 </ul>
                 <ul class="product-list" id="product-medicine">
-                    <li class="medicine-list-item"><button id="2691067">攻擊力爆發藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691045">生命力恢復藥水(小)</button></li>
-                    <li class="medicine-list-item"><button id="2691046">生命力恢復藥水(大)</button></li>
-                    <li class="medicine-list-item"><button id="2691047">行動力藥水(小)</button></li>
-                    <li class="medicine-list-item"><button id="2691048">行動力藥水(大)</button></li>
-                    <li class="medicine-list-item"><button id="2691049">發光藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691050">攻擊力藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691051">防禦力藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691052">移動速度藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691053">跳躍力藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691054">毒藥水</button></li>
-                    <li class="medicine-list-item"><button id="2691083">破片手榴彈</button></li>
-                    <li class="medicine-list-item"><button id="2691084">煙霧彈</button></li>
-                    <li class="medicine-list-item"><button id="2691085">燃燒瓶</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691067">攻擊力爆發藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691045">生命力恢復藥水(小)</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691046">生命力恢復藥水(大)</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691047">行動力藥水(小)</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691048">行動力藥水(大)</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691049">發光藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691050">攻擊力藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691051">防禦力藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691052">移動速度藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691053">跳躍力藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691054">毒藥水</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691083">破片手榴彈</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691084">煙霧彈</button></li>
+                    <li class="medicine-list-item"><button data-item-id="2691085">燃燒瓶</button></li>
                 </ul>
                 <ul class="product-list" id="product-mount">
-                    <li class="mount-list-item"><button id="2691058">魔法翅膀1次使用券</button></li>
-                    <li class="mount-list-item"><button id="2691059">飛機1次使用券</button></li>
-                    <li class="mount-list-item"><button id="2691060">潛水艇1次使用券</button></li>
+                    <li class="mount-list-item"><button data-item-id="2691058">魔法翅膀1次使用券</button></li>
+                    <li class="mount-list-item"><button data-item-id="2691059">飛機1次使用券</button></li>
+                    <li class="mount-list-item"><button data-item-id="2691060">潛水艇1次使用券</button></li>
                 </ul>    
             </div>
-        </div>
-        <div class="todo-list-container">
-            <ul class="todo-btn-list">
-                <li><button class="todo-btn focused">1</button></li>
-                <li><button class="todo-btn">2</button></li>
-                <li><button class="todo-btn">3</button></li>
-            </ul>
-            <div class="todo-list-main">
-                <div class="product-todo focused" id="product-todo-1">
-                    <h2>第一次製作</h2>
-                    <ul class="todo-list">
-                    </ul>
-                    <p class="hint">尚未加入欲製作道具</p> 
-                </div>
-                <div class="product-todo" id="product-todo-2">
-                    <h2>第二次製作</h2>
-                    <ul class="todo-list">
-                    </ul>
-                    <p class="hint">尚未加入欲製作道具</p> 
-                </div>
-                <div class="product-todo" id="product-todo-3">
-                    <h2>第三次製作</h2>
-                    <ul class="todo-list">
-                    </ul>
-                    <p class="hint">尚未加入欲製作道具</p> 
+        </nav>
+        <main class="container">
+            <div class="todo-list-container">
+                <ul class="todo-btn-list">
+                    <li><button class="todo-btn focused">1</button></li>
+                    <li><button class="todo-btn">2</button></li>
+                    <li><button class="todo-btn">3</button></li>
+                </ul>
+                <div class="todo-list-main">
+                    <div class="product-todo focused" id="product-todo-1">
+                        <h2 data-todo-list-number="product-todo-1">製作清單一</h2>
+                        <ul class="todo-list" data-todo-list-number="product-todo-1">
+                        </ul>
+                        <p class="hint" data-todo-list-number="product-todo-1">尚未加入欲製作道具</p> 
+                    </div>
+                    <div class="product-todo" id="product-todo-2">
+                        <h2 data-todo-list-number="product-todo-1">製作清單二</h2>
+                        <ul class="todo-list" data-todo-list-number="product-todo-1">
+                        </ul>
+                        <p class="hint" data-todo-list-number="product-todo-1">尚未加入欲製作道具</p> 
+                    </div>
+                    <div class="product-todo" id="product-todo-3">
+                        <h2 data-todo-list-number="product-todo-1">製作清單三</h2>
+                        <ul class="todo-list" data-todo-list-number="product-todo-1">
+                        </ul>
+                        <p class="hint" data-todo-list-number="product-todo-1">尚未加入欲製作道具</p> 
+                    </div>
                 </div>
             </div>
-            
-        </div>
-        
-    </main>
+        </main>
+    </div>
     <script src="js/all.js"></script>
 </body>
 </html>
