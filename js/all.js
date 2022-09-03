@@ -65,6 +65,7 @@ productListContainer.addEventListener('click', function(e) {
             <button class="btn-delete" data-todo-list-number="${todoListIDCurrent.slice(1)}"></button>
         `;
         todoList.appendChild(todoItem);
+        // todoList.style.borderTop = '1px rgba(171, 125, 9) solid';
         let productTodoHint = document.querySelector(`${todoListIDCurrent} > .hint`);
         if(productTodoHint){
             productTodoHint.style.display = 'none';
@@ -76,6 +77,7 @@ productListContainer.addEventListener('click', function(e) {
             deleteItem.parentElement.remove();
             if(isListEmpty(todoList)){
                 productTodoHint.style.display = 'block';
+                // todoList.style.borderTop = 'none';
             }
         })
     }

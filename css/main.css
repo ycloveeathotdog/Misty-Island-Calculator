@@ -66,15 +66,6 @@ body {
   display: flex;
 }
 
-.container {
-  max-width: 1200px;
-  margin-left: 48px;
-  margin-top: 64px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 a {
   text-decoration: none;
   display: inline-block;
@@ -198,7 +189,9 @@ button:active {
 }
 
 .todo-list-container {
-  height: 27.5em;
+  height: 100vh;
+  max-width: calc(100vw - 330px);
+  padding: 64px 48px;
 }
 .todo-list-container .todo-btn-list {
   display: -webkit-box;
@@ -210,12 +203,16 @@ button:active {
   margin-right: 8px;
 }
 .todo-list-container .todo-list-main {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-x: scroll;
   height: calc(100% - 16px - 46px);
 }
 .todo-list-container .product-todo {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 320px;
   margin-right: 24px;
   background-color: hsl(0deg, 0%, 76%);
@@ -227,16 +224,40 @@ button:active {
 .todo-list-container .product-todo::-webkit-scrollbar {
   display: none;
 }
+.todo-list-container .product-todo section {
+  margin-bottom: 16px;
+}
 .todo-list-container .product-todo h2 {
   font: 500 20px/1.25 "Noto Sans TC", sans-serif;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
-.todo-list-container .product-todo ul > li:not(:last-child) {
+.todo-list-container .product-todo h3 {
+  color: rgba(0, 0, 0, 0.64);
+  margin-bottom: 8px;
+}
+.todo-list-container .product-todo .m-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 4px;
+}
+.todo-list-container .product-todo .m-list .m-list-item {
+  padding: 4px 8px;
+  background-color: rgb(226, 186, 82);
+  border: 2px solid black;
+  border-radius: 0.4em;
+}
+.todo-list-container .product-todo .todo-list {
+  padding-top: 8px;
+}
+.todo-list-container .product-todo .todo-list > li:not(:last-child) {
   margin-bottom: 16px;
 }
 .todo-list-container .product-todo .hint {
   position: relative;
-  top: calc(50% - 16px - 25px);
+  top: 144px;
   color: rgba(0, 0, 0, 0.5843137255);
 }
 .todo-list-container .product-todo .todo-item {
@@ -255,7 +276,7 @@ button:active {
 .todo-list-container .product-todo .todo-item p {
   width: 200px;
   padding: 8px 16px;
-  border-bottom: 2px solid rgb(56, 56, 56);
+  border-bottom: 1.5px solid rgb(171, 125, 9);
 }
 .todo-list-container .focused {
   background-color: goldenrod;

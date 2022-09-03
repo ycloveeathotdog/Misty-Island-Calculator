@@ -45,7 +45,9 @@
     }
 }
 .todo-list-container{
-    height: 27.5em;
+    height: 100vh;
+    max-width: calc(100vw - 330px);
+    padding: 64px 48px;
     .todo-btn-list{
         display: flex;
         li{
@@ -54,32 +56,54 @@
         margin-bottom: 16px;
     }
     .todo-list-main{
-        // background-color: aqua;
+        width: 100%;
         display: flex;
+        overflow-x: scroll;
         height: calc(100% - 16px - 46px) ;
     }
     .product-todo{
+        flex-shrink : 0;
         width: 320px;
         margin-right: 24px;
         background-color: hsl(0, 0%, 76%);
         border: 3px black solid;
         padding: 16px 32px 40px 32px;
         text-align: center;
-
         overflow-y: scroll;
         &::-webkit-scrollbar {
             display: none;
         }
+        section{
+            margin-bottom: 16px;
+        }
         h2{
             font: $font-d-20;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
-        ul > li:not(:last-child){
+        h3{
+            color: rgba(0, 0, 0, 0.64);
+            margin-bottom: 8px;
+        }
+        .m-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            .m-list-item{
+                padding: 4px 8px;
+                background-color: rgb(226, 186, 82);
+                border: 2px solid black;
+                border-radius: 0.4em;
+            }
+        }
+        .todo-list{
+            padding-top: 8px;
+        }
+        .todo-list > li:not(:last-child){
             margin-bottom: 16px;
         }
         .hint{
             position: relative;
-            top: calc(50% - 16px - 25px);
+            top: 144px;
             color: #00000095;
         }
         .todo-item{
@@ -91,7 +115,7 @@
             p{
                 width: 200px;
                 padding: 8px 16px;
-                border-bottom: 2px solid rgb(56, 56, 56);
+                border-bottom: 1.5px solid rgb(171, 125, 9);
             }
         }
     }
