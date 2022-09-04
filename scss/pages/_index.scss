@@ -87,6 +87,7 @@
         h3{
             color: rgba(0, 0, 0, 0.64);
             margin-bottom: 8px;
+            font: $font-t-16;
         }
         .m-list{
             display: flex;
@@ -97,6 +98,7 @@
                 background-color: rgb(226, 186, 82);
                 border: 2px solid black;
                 border-radius: 0.4em;
+                font: $font-t-14;
             }
         }
         .todo-list{

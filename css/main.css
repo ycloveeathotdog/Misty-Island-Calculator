@@ -238,6 +238,7 @@ button:active {
 .todo-list-container .product-todo h3 {
   color: rgba(0, 0, 0, 0.64);
   margin-bottom: 8px;
+  font: 400 16px/19px "Noto Sans TC", sans-serif;
 }
 .todo-list-container .product-todo .m-list {
   display: -webkit-box;
@@ -252,6 +253,7 @@ button:active {
   background-color: rgb(226, 186, 82);
   border: 2px solid black;
   border-radius: 0.4em;
+  font: 400 14px/18px "Noto Sans TC", sans-serif;
 }
 .todo-list-container .product-todo .todo-list {
   padding-top: 8px;
