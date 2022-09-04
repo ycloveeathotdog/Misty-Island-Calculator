@@ -226,6 +226,7 @@ button:active {
 }
 .todo-list-container .product-todo section {
   margin-bottom: 16px;
+  display: none;
 }
 .todo-list-container .product-todo h2 {
   font: 500 20px/1.25 "Noto Sans TC", sans-serif;
