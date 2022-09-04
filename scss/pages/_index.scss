@@ -24,7 +24,7 @@
         padding: 8px 16px;
         text-align: center;
         cursor: pointer;
-        
+
         &:hover{
             font-weight: 600;
             background: #B8B8B8;
@@ -75,6 +75,7 @@
         }
         section{
             margin-bottom: 16px;
+            display: none;
         }
         h2{
             font: $font-d-20;
