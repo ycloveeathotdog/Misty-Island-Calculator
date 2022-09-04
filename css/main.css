@@ -190,7 +190,7 @@ button:active {
 
 .todo-list-container {
   height: 100vh;
-  max-width: calc(100vw - 330px);
+  max-width: calc(100vw - 333px);
   padding: 64px 48px;
 }
 .todo-list-container .todo-btn-list {
@@ -209,6 +209,9 @@ button:active {
   display: flex;
   overflow-x: scroll;
   height: calc(100% - 16px - 46px);
+}
+.todo-list-container .todo-list-main::-webkit-scrollbar {
+  display: none;
 }
 .todo-list-container .product-todo {
   -ms-flex-negative: 0;

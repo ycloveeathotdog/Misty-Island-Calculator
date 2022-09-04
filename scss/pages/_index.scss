@@ -46,7 +46,7 @@
 }
 .todo-list-container{
     height: 100vh;
-    max-width: calc(100vw - 330px);
+    max-width: calc(100vw - 333px);
     padding: 64px 48px;
     .todo-btn-list{
         display: flex;
@@ -60,6 +60,9 @@
         display: flex;
         overflow-x: scroll;
         height: calc(100% - 16px - 46px) ;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     .product-todo{
         flex-shrink : 0;
