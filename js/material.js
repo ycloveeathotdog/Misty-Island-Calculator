@@ -68,12 +68,7 @@ const material = {
     2693005: {
         name: '噴出岩',
         craftbench: null,
-        materials: [
-            {
-                material_id: 2693015,
-                count: 5,
-            },
-        ],
+        materials: null,
     },
     2693006: {
         name: '羽毛',
@@ -123,12 +118,7 @@ const material = {
     2693015: {
         name: '噴出岩粉末',
         craftbench: null,
-        materials: [
-            {
-                material_id: 2693005,
-                count: 1,
-            },
-        ],
+        materials: null,
     },
     2693016: {
         name: '暈厥的叢林豬',
@@ -190,7 +180,7 @@ const material = {
         craftbench: null,
         materials: null,
     },
-    // 加工合成 
+    // 加工合成
     2693017: {
         name: '繩子',
         craftbench: 0,
@@ -200,6 +190,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693018: {
         name: '木板',
@@ -210,6 +201,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693019: {
         name: '炭',
@@ -220,6 +212,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693020: {
         name: '磚塊',
@@ -230,6 +223,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693021: {
         name: '鐵板',
@@ -240,6 +234,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693022: {
         name: '鐵棍',
@@ -250,6 +245,7 @@ const material = {
                 count: 2,
             },
         ],
+        is_processed: 1
     },
     2693023: {
         name: '金塊',
@@ -260,6 +256,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693024: {
         name: '水泥粉末',
@@ -274,6 +271,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693025: {
         name: '螺絲',
@@ -284,6 +282,7 @@ const material = {
                 count: 2,
             },
         ],
+        is_processed: 1
     },
     2693026: {
         name: '齒輪',
@@ -294,6 +293,7 @@ const material = {
                 count: 2,
             },
         ],
+        is_processed: 1
     },
     2693027: {
         name: '控制桿',
@@ -308,6 +308,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693028: {
         name: '螺旋槳',
@@ -322,6 +323,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693029: {
         name: '引擎',
@@ -344,6 +346,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693030: {
         name: '火藥',
@@ -358,6 +361,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693031: {
         name: '紅花粉末',
@@ -368,6 +372,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693032: {
         name: '香蕉粉末',
@@ -378,6 +383,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693033: {
         name: '藥草粉末',
@@ -388,6 +394,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693035: {
         name: '水桶',
@@ -398,6 +405,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693038: {
         name: '水之寶石',
@@ -408,6 +416,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693039: {
         name: '閃電寶石',
@@ -418,6 +427,7 @@ const material = {
                 count: 1,
             },
         ],
+        is_processed: 1
     },
     2693040: {
         name: '噴出岩溶液',
@@ -428,6 +438,7 @@ const material = {
                 count: 2,
             },
         ],
+        is_processed: 1
     },
     2693041: {
         name: '再生溶液',
@@ -438,6 +449,7 @@ const material = {
                 count: 2,
             },
         ],
+        is_processed: 1
     },
     2693056: {
         name: '精煉的噴出岩結晶',
@@ -448,6 +460,7 @@ const material = {
                 count: 3,
             },
         ],
+        is_processed: 1
     },
     2693057: {
         name: '加工合成木',
@@ -462,6 +475,7 @@ const material = {
                 count: 2,
             },
         ],
+        is_processed: 1
     },
     // 工具
     2690010: {
@@ -821,7 +835,7 @@ const material = {
                 material_id: 2693001,
                 count: 2,
             },
-            
+
         ],
     },
     2690043: {
@@ -2724,7 +2738,7 @@ const material = {
             },
         ],
     },
-    //坐騎 
+    //坐騎
     2691058: {
         name: '魔法翅膀1次使用券',
         craftbench: 0,
