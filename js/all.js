@@ -115,7 +115,6 @@ const calculatMaterial = (listMaterial, listProcessed, itemId, count = 1, sign =
         }
     } else {
         if (item.is_processed) {
-            console.log(123);
             if (listProcessed[itemId]) {
                 listProcessed[itemId] += count * sign;
             } else {
@@ -129,7 +128,6 @@ const calculatMaterial = (listMaterial, listProcessed, itemId, count = 1, sign =
 }
 
 const flushMaterialData = (todoListIDCurrent, currListMaterial) => {
-    console.log(todoListIDCurrent);
     let materialList = document.querySelector(`${todoListIDCurrent} .low-level-m ul`);
     materialList.innerHTML = '';
     Object.keys(currListMaterial).forEach((element) => {
@@ -144,7 +142,6 @@ const flushMaterialData = (todoListIDCurrent, currListMaterial) => {
 
 const flushProcessedData = (todoListIDCurrent, currListProcessed, secProcessedM) => {
     let processedList = document.querySelector(`${todoListIDCurrent} .processed-m ul`);
-    console.log(processedList);
     processedList.innerHTML = '';
     Object.keys(currListProcessed).forEach((element) => {
         if (currListProcessed[element] !== 0) {
