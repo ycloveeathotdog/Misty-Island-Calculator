@@ -60,6 +60,7 @@ productListContainer.addEventListener('click', function(e) {
         todoItem.classList.add('todo-item');
         todoItem.setAttribute('data-todo-list-number',todoListIDCurrent.slice(1));
         todoItem.innerHTML = 
+        todoItem.setAttribute('data-item-id',targetItemId);
         `
             <p data-todo-list-number="${todoListIDCurrent.slice(1)}">${e.target.innerText}</p>
             <button class="btn-delete" data-todo-list-number="${todoListIDCurrent.slice(1)}"></button>
