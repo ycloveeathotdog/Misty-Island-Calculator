@@ -29,23 +29,95 @@ let todoListCurrent = todoBtn[0];
 let todoListPrevious;
 let todoListIDCurrent = '#product-todo-1';
 let todoListIDPrevious;
-for(let i=0;i<todoBtn.length;i++){
-    todoBtn[i].addEventListener('click', function (e) {
-        todoListPrevious = todoListCurrent;
-        todoListCurrent = e.target;
 
-        //按鈕變黃
-        todoListPrevious.classList.remove('focused');
-        todoListCurrent.classList.add('focused');
-
-        //對應便條紙focus
-        todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
-        todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
-        console.log(`前一次：${todoListIDPrevious} 目前：${todoListIDCurrent}`);
-        document.querySelector(todoListIDPrevious).classList.remove('focused');
-        document.querySelector(todoListIDCurrent).classList.add('focused');
-    })
+const tdListEvent = (e) => {
+    console.log(e);
+    todoListPrevious = todoListCurrent;
+    todoListCurrent = e.target;
+    //按鈕狀態變為focused = 變黃
+    FocuseTdListBtn(todoListPrevious, todoListCurrent);
+    //對應便條紙focused = 變黃
+    todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
+    todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
+    console.log(todoListIDPrevious, todoListIDCurrent);
+    document.querySelector(todoListIDPrevious).classList.remove('focused');
+    document.querySelector(todoListIDCurrent).classList.add('focused');
 }
+const FocuseTdListBtn = (previousBtn , currentBtn) =>{
+    previousBtn.classList.remove('focused');
+    currentBtn.classList.add('focused');
+}
+
+for(let i=0;i<todoBtn.length;i++){
+    todoBtn[i].addEventListener('click', tdListEvent);
+}
+
+
+///////////// 新增清單 /////////////
+// 如果點的是add-td-list 則新增且focuse在它身上
+let tdBtnList = document.querySelector('ul.todo-btn-list');
+let addTdList = document.querySelector('.add-td-list');
+let tdListNum = todoBtn.length;
+addTdList.addEventListener('click',function (e) {
+    tdListNum++;
+    const newTdBtn = document.createElement('li'); //上方新按鈕
+    const newTdList = document.createElement('div'); //新清單
+    //上方新按鈕
+    newTdBtn.innerHTML =
+        `
+        <button class="todo-btn">${tdListNum}</button>
+        `;
+    
+    tdBtnList.insertBefore(newTdBtn,addTdList.parentNode);
+    todoBtn = document.querySelectorAll('.todo-btn-list .todo-btn'); //更新抓到的todo-btn-list
+
+    //current變成newTdBtn previous清除focused
+    todoListPrevious = todoListCurrent;
+    todoListCurrent = todoBtn[tdListNum-1];
+    console.log(todoListPrevious, todoListCurrent);
+    FocuseTdListBtn(todoListPrevious, todoListCurrent);
+    // 新清單
+    newTdList.classList.add('product-todo');
+    newTdList.setAttribute('id','product-todo-'+tdListNum);
+    newTdList.innerHTML = 
+    `
+        <h2 data-todo-list-number="product-todo-${tdListNum}">製作清單${tdListNum}</h2>
+        <section class="low-level-m">
+            <h3>需要</h3>
+            <ul class="m-list">
+            </ul>
+        </section>
+        <section class="processed-m">
+            <h3>加工品</h3>
+            <ul class="m-list">
+            </ul>
+        </section>
+        <ul class="todo-list" data-todo-list-number="product-todo-${tdListNum}">
+        </ul>
+        <p class="hint" data-todo-list-number="product-todo-${tdListNum}">尚未加入欲製作道具</p>
+    `;
+    document.querySelector('.todo-list-main').appendChild(newTdList);
+    //新清單focused
+    todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
+    todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
+    document.querySelector(todoListIDPrevious).classList.remove('focused');
+    document.querySelector(todoListIDCurrent).classList.add('focused');
+    // todoBtn[tdListNum-1].addEventListener('click', e=>{
+    //     todoListPrevious = todoListCurrent;
+    //     todoListCurrent = e.target;
+    //     //按鈕狀態變為focused = 變黃
+    //     FocuseTdListBtn(todoListPrevious, todoListCurrent);
+    //     //對應便條紙focused = 變黃
+    //     todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
+    //     todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
+    //     console.log(todoListIDPrevious, todoListIDCurrent);
+    //     document.querySelector(todoListIDPrevious).classList.remove('focused');
+    //     document.querySelector(todoListIDCurrent).classList.add('focused');
+    // });
+    console.log(todoBtn[tdListNum-1]);
+    todoBtn[tdListNum-1].addEventListener('click', tdListEvent);
+    
+})
 ///////////// 點擊物品後新增至右側 /////////////
 let productListContainer = document.querySelector('.product-list-container'); //限制判斷點擊範圍
 {/* <li class="todo-item" data-todo-list-number=$1>

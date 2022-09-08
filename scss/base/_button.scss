@@ -40,3 +40,12 @@ button{
 .todo-btn-list .focused{
     background-color: goldenrod;
 }
+
+.add-td-list{
+    width: 47px;
+    height: 46px;
+    background: url('https://api.iconify.design/mdi/plus.svg') no-repeat center center / 24px;
+    &:active{
+        background-color: goldenrod;
+    }
+}
