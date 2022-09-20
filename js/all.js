@@ -24,32 +24,41 @@ proSkillClass.addEventListener('click', function(e) {
     }
 })
 // 幫所有預設便條紙加上事件監聽
-let todoBtn = document.querySelectorAll('.todo-btn-list .todo-btn');
-let todoListCurrent = todoBtn[0];
-let todoListPrevious;
-let todoListIDCurrent = '#product-todo-1';
-let todoListIDPrevious;
+let tdBtn = document.querySelectorAll('.todo-btn-list .todo-btn');
+let tdListCurrentBtn = tdBtn[0];
+let tdListPreviousBtn;
+let tdListCurrentID = '#product-todo-1';
+let tdListPreviousID;
 
 const tdListEvent = (e) => {
-    console.log(e);
-    todoListPrevious = todoListCurrent;
-    todoListCurrent = e.target;
+    tdListPreviousBtn = tdListCurrentBtn;
+    tdListCurrentBtn = e.target;
+    tdListPreviousID = `#product-todo-${tdListPreviousBtn.innerHTML}`;
+    tdListCurrentID = `#product-todo-${tdListCurrentBtn.innerHTML}`;
+    const tdListPrevious = document.querySelector(tdListPreviousID);
+    const tdListCurrent = document.querySelector(tdListCurrentID);
     //按鈕狀態變為focused = 變黃
-    FocuseTdListBtn(todoListPrevious, todoListCurrent);
+    FocusTdListBtn(tdListPreviousBtn, tdListCurrentBtn);
     //對應便條紙focused = 變黃
-    todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
-    todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
-    console.log(todoListIDPrevious, todoListIDCurrent);
-    document.querySelector(todoListIDPrevious).classList.remove('focused');
-    document.querySelector(todoListIDCurrent).classList.add('focused');
+    FocusTdList(tdListPrevious, tdListCurrent);
 }
-const FocuseTdListBtn = (previousBtn , currentBtn) =>{
+const FocusTdListBtn = (previousBtn , currentBtn) =>{
     previousBtn.classList.remove('focused');
     currentBtn.classList.add('focused');
 }
+const FocusTdList = (previousList, currentList) =>{
+    previousList.classList.remove('focused');
+    currentList.classList.add('focused');
+    //移動至該list
+    currentList.scrollIntoView({
+        behavior: 'smooth',
+        inline:'center',
+    })
+}
 
-for(let i=0;i<todoBtn.length;i++){
-    todoBtn[i].addEventListener('click', tdListEvent);
+
+for(let i=0;i<tdBtn.length;i++){
+    tdBtn[i].addEventListener('click', tdListEvent);
 }
 
 
@@ -57,7 +66,7 @@ for(let i=0;i<todoBtn.length;i++){
 // 如果點的是add-td-list 則新增且focuse在它身上
 let tdBtnList = document.querySelector('ul.todo-btn-list');
 let addTdList = document.querySelector('.add-td-list');
-let tdListNum = todoBtn.length;
+let tdListNum = tdBtn.length;
 addTdList.addEventListener('click',function (e) {
     tdListNum++;
     const newTdBtn = document.createElement('li'); //上方新按鈕
@@ -67,15 +76,13 @@ addTdList.addEventListener('click',function (e) {
         `
         <button class="todo-btn">${tdListNum}</button>
         `;
-    
     tdBtnList.insertBefore(newTdBtn,addTdList.parentNode);
-    todoBtn = document.querySelectorAll('.todo-btn-list .todo-btn'); //更新抓到的todo-btn-list
+    tdBtn = document.querySelectorAll('.todo-btn-list .todo-btn'); //更新抓到的todo-btn-list
 
     //current變成newTdBtn previous清除focused
-    todoListPrevious = todoListCurrent;
-    todoListCurrent = todoBtn[tdListNum-1];
-    console.log(todoListPrevious, todoListCurrent);
-    FocuseTdListBtn(todoListPrevious, todoListCurrent);
+    tdListPreviousBtn = tdListCurrentBtn;
+    tdListCurrentBtn = tdBtn[tdListNum-1];
+    FocusTdListBtn(tdListPreviousBtn, tdListCurrentBtn);
     // 新清單
     newTdList.classList.add('product-todo');
     newTdList.setAttribute('id','product-todo-'+tdListNum);
@@ -98,66 +105,52 @@ addTdList.addEventListener('click',function (e) {
     `;
     document.querySelector('.todo-list-main').appendChild(newTdList);
     //新清單focused
-    todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
-    todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
-    document.querySelector(todoListIDPrevious).classList.remove('focused');
-    document.querySelector(todoListIDCurrent).classList.add('focused');
-    // todoBtn[tdListNum-1].addEventListener('click', e=>{
-    //     todoListPrevious = todoListCurrent;
-    //     todoListCurrent = e.target;
-    //     //按鈕狀態變為focused = 變黃
-    //     FocuseTdListBtn(todoListPrevious, todoListCurrent);
-    //     //對應便條紙focused = 變黃
-    //     todoListIDPrevious = `#product-todo-${todoListPrevious.innerHTML}`;
-    //     todoListIDCurrent = `#product-todo-${todoListCurrent.innerHTML}`;
-    //     console.log(todoListIDPrevious, todoListIDCurrent);
-    //     document.querySelector(todoListIDPrevious).classList.remove('focused');
-    //     document.querySelector(todoListIDCurrent).classList.add('focused');
-    // });
-    console.log(todoBtn[tdListNum-1]);
-    todoBtn[tdListNum-1].addEventListener('click', tdListEvent);
+    tdListPreviousID = `#product-todo-${tdListPreviousBtn.innerHTML}`;
+    tdListCurrentID = `#product-todo-${tdListCurrentBtn.innerHTML}`;
+    FocusTdList(document.querySelector(tdListPreviousID), document.querySelector(tdListCurrentID));
+    
+    tdBtn[tdListNum-1].addEventListener('click', tdListEvent);
     
 })
 ///////////// 點擊物品後新增至右側 /////////////
 let productListContainer = document.querySelector('.product-list-container'); //限制判斷點擊範圍
-{/* <li class="todo-item" data-todo-list-number=$1>
+/* { <li class="todo-item" data-todo-list-number=$1>
         <p data-todo-list-number=$1>test</p>
         <button class="btn-delete" data-todo-list-number=$1></button>
-    </li> */}
+    </li> } */
 // 需求素材
 let listMaterial = {};
 let listProcessed = {};
 productListContainer.addEventListener('click', function(e) {
     let targetItemId = e.target.dataset.itemId;
-    let todoList = document.querySelector(`${todoListIDCurrent} > ul.todo-list`);
+    let todoList = document.querySelector(`${tdListCurrentID} > ul.todo-list`);
     if(targetItemId){
         const todoItem = document.createElement('li');
         todoItem.classList.add('todo-item');
-        todoItem.setAttribute('data-todo-list-number',todoListIDCurrent.slice(1));
+        todoItem.setAttribute('data-todo-list-number',tdListCurrentID.slice(1));
         todoItem.setAttribute('data-item-id',targetItemId);
         todoItem.innerHTML =
         `
-            <p data-todo-list-number="${todoListIDCurrent.slice(1)}">${e.target.innerText}</p>
-            <button class="btn-delete" data-todo-list-number="${todoListIDCurrent.slice(1)}"></button>
+            <p data-todo-list-number="${tdListCurrentID.slice(1)}">${e.target.innerText}</p>
+            <button class="btn-delete" data-todo-list-number="${tdListCurrentID.slice(1)}"></button>
         `;
         todoList.appendChild(todoItem);
-        // todoList.style.borderTop = '1px rgba(171, 125, 9) solid';
-        let productTodoHint = document.querySelector(`${todoListIDCurrent} > .hint`);
-        let secLowLevelM = document.querySelector(`${todoListIDCurrent} .low-level-m`);
-        let secProcessedM = document.querySelector(`${todoListIDCurrent} .processed-m`);
+        let productTodoHint = document.querySelector(`${tdListCurrentID} > .hint`);
+        let secLowLevelM = document.querySelector(`${tdListCurrentID} .low-level-m`);
+        let secProcessedM = document.querySelector(`${tdListCurrentID} .processed-m`);
 
         productTodoHint.style.display = 'none';
         secLowLevelM.style.display = 'block';
         // 計算物品所需材料
-        let todoListNumber = todoListIDCurrent.split('-')[2];
+        let todoListNumber = tdListCurrentID.split('-')[2];
         listMaterial[todoListNumber] = listMaterial[todoListNumber] ? listMaterial[todoListNumber] : {};
         listProcessed[todoListNumber] = listProcessed[todoListNumber] ? listProcessed[todoListNumber] : {};
         calculatMaterial(listMaterial[todoListNumber], listProcessed[todoListNumber], targetItemId, 1);
         // 更新畫面數據
-        flushMaterialData(todoListIDCurrent, listMaterial[todoListNumber]);
-        flushProcessedData(todoListIDCurrent, listProcessed[todoListNumber], secProcessedM);
+        flushMaterialData(tdListCurrentID, listMaterial[todoListNumber]);
+        flushProcessedData(tdListCurrentID, listProcessed[todoListNumber], secProcessedM);
         //在item的刪除按鈕上綁事件監聽
-        const buttonDelete = document.querySelectorAll(`${todoListIDCurrent} .btn-delete`);
+        const buttonDelete = document.querySelectorAll(`${tdListCurrentID} .btn-delete`);
         const deleteItem = buttonDelete[buttonDelete.length-1];
         deleteItem.addEventListener('click', function (e) {
             let deleteItemId = deleteItem.parentElement.dataset.itemId;
@@ -199,8 +192,8 @@ const calculatMaterial = (listMaterial, listProcessed, itemId, count = 1, sign =
     }
 }
 
-const flushMaterialData = (todoListIDCurrent, currListMaterial) => {
-    let materialList = document.querySelector(`${todoListIDCurrent} .low-level-m ul`);
+const flushMaterialData = (tdListCurrentID, currListMaterial) => {
+    let materialList = document.querySelector(`${tdListCurrentID} .low-level-m ul`);
     materialList.innerHTML = '';
     Object.keys(currListMaterial).forEach((element) => {
         if (currListMaterial[element] !== 0) {
@@ -212,8 +205,8 @@ const flushMaterialData = (todoListIDCurrent, currListMaterial) => {
     });
 };
 
-const flushProcessedData = (todoListIDCurrent, currListProcessed, secProcessedM) => {
-    let processedList = document.querySelector(`${todoListIDCurrent} .processed-m ul`);
+const flushProcessedData = (tdListCurrentID, currListProcessed, secProcessedM) => {
+    let processedList = document.querySelector(`${tdListCurrentID} .processed-m ul`);
     processedList.innerHTML = '';
     Object.keys(currListProcessed).forEach((element) => {
         if (currListProcessed[element] !== 0) {
